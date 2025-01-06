@@ -39,16 +39,37 @@
 .status {
   padding-block: 15px;
   color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.status.player-o span {
+  color: red;
+}
+
+.status.player-x span {
+  color: #61dafb;
 }
 
 .square {
-  width: 45px;
-  height: 45px;
+  width: 105px;
+  height: 105px;
   margin: 2.5px;
   border-radius: 7px;
-  color: #61dafb;
   background: #282c34;
+  border: 1px solid white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.square-x {
+  color: #61dafb;
   border: 1px solid #61dafb;
+}
+
+.square-y {
+  color: red;
+  border: 1px solid red;
 }
 
 .game-info {

@@ -2,11 +2,25 @@
 import { useState } from "react";
 import './App.css';
 function Square({ value, onSquareClick }) {
-  return (
-    <button className="square" onClick={onSquareClick}>
-      {value}
-    </button>
-  );
+  if (value === 'X') {
+    return (
+      <button className="square square-x" onClick={onSquareClick} >
+        {value}
+      </button >
+    );
+  } else if (value === 'O') {
+    return (
+      <button className="square square-y" onClick={onSquareClick} >
+        {value}
+      </button >
+    );
+  } else {
+    return (
+      <button className="square" onClick={onSquareClick} >
+        {value}
+      </button >
+    );
+  }
 }
 
 function Board({ xIsNext, squares, onPlay }) {
@@ -33,8 +47,8 @@ function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <>
-      <div className="status">
-        {status}
+      <div className={`status ${status === 'Next player: X' ? 'player-x' : 'player-o'}`}>
+        <span>{status}</span> 
       </div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
